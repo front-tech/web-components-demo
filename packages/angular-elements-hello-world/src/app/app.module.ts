@@ -1,3 +1,4 @@
+import { APP_BASE_HREF } from '@angular/common';
 import { Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,7 +14,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: window.location.pathname}],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
